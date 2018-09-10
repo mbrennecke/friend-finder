@@ -6,12 +6,15 @@ module.exports = (function() {
     var externalRoutes = require('express').Router();
 
 	externalRoutes.get("/", function(req, res) {
-		//res.send("Worked");
 	  res.sendFile(path.join(__dirname, "../public/home.html"));
 	});
 
 	externalRoutes.get("/index", function(req, res) {
-	  res.sendFile(path.join(__dirname, "home.html"));
+	  res.sendFile(path.join(__dirname, "../public/home.html"));
+	});
+	
+	externalRoutes.get("/survey", function(req, res) {
+	  res.sendFile(path.join(__dirname, "../public/survey.html"));
 	});
 	
     return externalRoutes;

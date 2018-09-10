@@ -1,0 +1,14 @@
+.jumbotron {
+	margin-top: 2rem;
+	background-image: url("../images/tyler-nix-525388-unsplash.jpg");
+	padding-bottom: 25rem;
+	color: #040404;
+}
+
+.move-right {
+	margin-left: 8rem;
+}
+
+.move-more-right {
+	margin-left: 13rem;
+}

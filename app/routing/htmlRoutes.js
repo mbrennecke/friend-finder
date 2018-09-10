@@ -1,17 +1,18 @@
-var express = require("express");
 var path = require("path");
 
-var app = express();
+module.exports = (function() {
+    'use strict';
 
+    var externalRoutes = require('express').Router();
 
-app.use(express.static(path.join(__dirname, '/app/public/')));
+	externalRoutes.get("/", function(req, res) {
+		//res.send("Worked");
+	  res.sendFile(path.join(__dirname, "../public/home.html"));
+	});
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "app/public/home.html"));
-});
-
-app.get("/index", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
-});
-
-module.exports = myRoute;
+	externalRoutes.get("/index", function(req, res) {
+	  res.sendFile(path.join(__dirname, "home.html"));
+	});
+	
+    return externalRoutes;
+})();

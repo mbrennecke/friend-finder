@@ -1,14 +1,20 @@
+var express = require("express");
+var path = require("path");
 
+var app = express();
 var bodyParser = require("body-parser");
 
 var PORT = process.env.PORT || 8080;
 
-var externalRoutes = require("./app/routing/htmlRoutes.js");
-app.use('/externalRoutes', externalRoutes);
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var externalRoutes = require("./app/routing/htmlRoutes");
+app.use('/', externalRoutes);
+
+
+
+app.use(express.static(path.join(__dirname, '/app/public/')));
 
 
 

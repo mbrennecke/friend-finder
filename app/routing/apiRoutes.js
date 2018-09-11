@@ -1,7 +1,7 @@
 var path = require("path");
 var bodyParser = require("body-parser");
 
-var friendList = [];
+var friendList = require("../data/friends.js");
 
 module.exports = (function() {
     'use strict';
@@ -17,6 +17,7 @@ module.exports = (function() {
 	
 	apiRoutes.post("/api/friends", function(req,res){
 		var newFriend = req.body;
+		friendList.push(newFriend);
 		return console.log(newFriend);
 	});
 	

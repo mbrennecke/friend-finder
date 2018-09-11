@@ -13,9 +13,12 @@ module.exports = (function() {
 	  res.sendFile(path.join(__dirname, "../public/survey.html"));
 	});
 	
-	 htmlRoutes.get("/*", function(req, res) {
-		 if 
-	   res.sendFile(path.join(__dirname, "../public/home.html"));
+	 htmlRoutes.get("/:URLcatch", function(req, res) {
+		 var URLcatch = req.params.URLcatch;
+		 if (URLcatch != 'app'){
+			 res.sendFile(path.join(__dirname, "../public/home.html"));
+		 }
+	  // res.sendFile(path.join(__dirname, "../public/home.html"));
 	 });
 	
     return htmlRoutes;

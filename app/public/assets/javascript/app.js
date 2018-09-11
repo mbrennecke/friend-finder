@@ -7,7 +7,6 @@ var surveyResults = [];
 
 function survey() {
 	$("#photoAlert").remove();
-	if (count < 10) {
 	$("#question").html('<p class="d-flex justify-content-center clearBottom">' + question[count] + '</p>' +
 				'<div class="centerRadio"><div class="likely"><span class="right-margin">Strongly disagree</span>' +
 				
@@ -35,7 +34,7 @@ function survey() {
 				
 	);
 	count++;	
-	}
+	
 }
 
 
@@ -121,9 +120,28 @@ $(document).on("click", "#photoButton", function(event) {
 });
 
 $(document).on("click", ".surveyButton", function(event) {
-	var radioValue = $("input[name='inlineRadioOptions']:checked").val();
-	surveyResults.push(radioValue);
-	survey();
+	if (count < 10) {
+		var radioValue = $("input[name='inlineRadioOptions']:checked").val();
+		surveyResults.push(radioValue);
+		survey();
+	} else {
+		var data = {
+			name: name,
+			photo: photo,
+			surveyResults: surveyResults
+		};
+		// Send the POST request.
+		$.ajax("/api/friends", {
+			type: "POST",
+			data: data
+		}).then(
+			function() {
+				console.log("shipped out");
+				// Reload the page to get the updated list
+				location.reload();
+			}
+		);
+	}
 });
 
 nameField();

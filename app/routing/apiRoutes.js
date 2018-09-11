@@ -17,7 +17,7 @@ module.exports = (function() {
 	
 	apiRoutes.post("/api/friends", function(req,res){
 		var newFriend = req.body;
-		console.log(newFriend);
+		return console.log(newFriend);
 	});
 	
 	return apiRoutes;

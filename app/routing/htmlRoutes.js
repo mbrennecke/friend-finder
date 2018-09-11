@@ -8,14 +8,15 @@ module.exports = (function() {
 	htmlRoutes.get("/", function(req, res) {
 	  res.sendFile(path.join(__dirname, "../public/home.html"));
 	});
-
-	htmlRoutes.get("/index", function(req, res) {
-	  res.sendFile(path.join(__dirname, "../public/home.html"));
-	});
 	
 	htmlRoutes.get("/survey", function(req, res) {
 	  res.sendFile(path.join(__dirname, "../public/survey.html"));
 	});
+	
+	 htmlRoutes.get("/*", function(req, res) {
+		 if 
+	   res.sendFile(path.join(__dirname, "../public/home.html"));
+	 });
 	
     return htmlRoutes;
 })();

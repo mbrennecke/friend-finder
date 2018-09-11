@@ -16,9 +16,11 @@
 }
 
 .question-box {
+	
 	background-color: rgba(255,255,255,0.6);
 	padding: 1rem;
 	border-radius: 5px;
+	
 }
 
 #question {
@@ -29,4 +31,33 @@
 
 .alert-warning {
 	margin-top: 1rem;
+}
+
+.likely {
+	font-weight: 300;
+	font-size: .8em;
+}
+
+.right-margin {
+	margin-right: 4rem;;
+}
+
+.push-right {
+	margin-right: 2.2rem;
+}
+
+.push-left {
+	margin-left: 2rem;
+}
+
+.surveyButton  {
+	margin-left: 7rem;
+}
+
+.clearBottom {
+	margin: 0;
+}
+.centerRadio {
+	width: 20rem;
+	margin: 0 auto;
 }

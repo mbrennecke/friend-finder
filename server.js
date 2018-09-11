@@ -9,10 +9,11 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var externalRoutes = require("./app/routing/htmlRoutes");
-app.use('/', externalRoutes);
+var htmlRoutes = require("./app/routing/htmlRoutes");
+app.use('/', htmlRoutes);
 
-
+var apiRoutes = require("./app/routing/htmlRoutes");
+app.use('/', htmlRoutes);
 
 
 

@@ -6,32 +6,38 @@ var photo = '';
 var surveyResults = [];
 
 function survey() {
-	$("#question").html('<p>' + question[count] + '</p>' +
-					'<div class="form-check form-check-inline">' +
-				  '<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">' +
-				 '<label class="form-check-label" for="inlineRadio1">1</label>' +
+	$("#photoAlert").remove();
+	if (count < 10) {
+	$("#question").html('<p class="d-flex justify-content-center clearBottom">' + question[count] + '</p>' +
+				'<div class="centerRadio"><div class="likely"><span class="right-margin">Strongly disagree</span>' +
+				
+				' <span>Strongly agree</span></div>'+
+					'<div class="form-check form-check-inline push-left push-right">' +
+				  '<input class="form-check-input position-static" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">' +
+				 '<label class="form-check-label " for="inlineRadio1"></label>' +
+				'</div>' +
+				'<div class="form-check form-check-inline push-right">' +
+				  '<input class="form-check-input position-static" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">' +
+				 '<label class="form-check-label " for="inlineRadio2"></label>' +
+				'</div>' +
+				'<div class="form-check form-check-inline push-right">' +
+				  '<input class="form-check-input position-static" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">' +
+				 ' <label class="form-check-label " for="inlineRadio3"></label>' +
+				'</div>' +
+				'<div class="form-check form-check-inline push-right">' +
+				 '<input class="form-check-input position-static" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">' +
+				 '<label class="form-check-label " for="inlineRadio4"></label>' +
 				'</div>' +
 				'<div class="form-check form-check-inline">' +
-				  '<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">' +
-				 '<label class="form-check-label" for="inlineRadio2">2</label>' +
-				'</div>' +
-				'<div class="form-check form-check-inline">' +
-				  '<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">' +
-				 ' <label class="form-check-label" for="inlineRadio3">3</label>' +
-				'</div>' +
-				'<div class="form-check form-check-inline">' +
-				 '<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4">' +
-				 '<label class="form-check-label" for="inlineRadio2">4</label>' +
-				'</div>' +
-				'<div class="form-check form-check-inline">' +
-				  '<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">' +
-				 '<label class="form-check-label" for="inlineRadio3">5</label>' +
-				'</div>' +
-				'<button type="button" class="btn btn-info btn-sm">Submit</button>'
+				  '<input class="form-check-input position-static" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">' +
+				 '<label class="form-check-label" for="inlineRadio5"></label></div>' + 
+				 '<div><button type="button" class="btn btn-info btn-sm surveyButton ">Submit</button></div></div>'
+				
 	);
 	count++;	
 	}
 }
+
 
 function nameField() {
 	$("#question").html(
@@ -108,10 +114,16 @@ $(document).on("click", "#photoButton", function(event) {
 	if (!photo) {
 		$("#photoAlert").show();
 	} else {
-		$("#photoAlert").hide();
+		
 		survey();
 	}
 
+});
+
+$(document).on("click", ".surveyButton", function(event) {
+	var radioValue = $("input[name='inlineRadioOptions']:checked").val();
+	surveyResults.push(radioValue);
+	survey();
 });
 
 nameField();

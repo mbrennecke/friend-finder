@@ -6,8 +6,10 @@ var photo = '';
 var surveyResults = [];
 
 function survey() {
+	
 	$("#photoAlert").remove();
-	$("#question").html('<p class="d-flex justify-content-center clearBottom">' + question[count] + '</p>' +
+	if (count <= 9) {
+		$("#question").html('<p class="d-flex justify-content-center clearBottom">' + question[count] + 	'</p>' +
 				'<div class="centerRadio"><div class="likely"><span class="right-margin">Strongly disagree</span>' +
 				
 				' <span>Strongly agree</span></div>'+
@@ -30,11 +32,14 @@ function survey() {
 				'<div class="form-check form-check-inline">' +
 				  '<input class="form-check-input position-static" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5">' +
 				 '<label class="form-check-label" for="inlineRadio5"></label></div>' + 
-				 '<div><button type="button" class="btn btn-info btn-sm surveyButton ">Submit</button></div></div>'
-				
-	);
-	count++;	
-	
+				 '<div><button type="button" class="btn btn-info btn-sm surveyButton ">Submit</button></div></div>'	
+		);
+		count++;
+	} else {
+			$("#question").html('<div class="alert alert-success" role="alert">' +
+								'Thank you!</div>');
+				sendData();
+	}
 }
 
 
@@ -70,7 +75,22 @@ function imageUpload() {
 	$("#photoAlert").hide();
 }
 
-
+function sendData(){
+	var data = {
+			name: name,
+			photo: photo,
+			surveyResults: surveyResults
+		};
+		// Send the POST request.
+		console.log(data);
+		$.ajax("/api/friends", {
+			type: "POST",
+			data: data
+		}).then(
+			function() {
+				return
+			});
+}
 
 
 //On button click name is added
@@ -104,44 +124,11 @@ $(document).on("click", "#photoButton", function(event) {
 });
 
 
-//On button click survey result is added
-$(document).on("click", "#photoButton", function(event) {
-    event.preventDefault();
-
-    photo = $("#photo").val();
-
-	if (!photo) {
-		$("#photoAlert").show();
-	} else {
-		
-		survey();
-	}
-
-});
-
 $(document).on("click", ".surveyButton", function(event) {
-	if (count < 10) {
 		var radioValue = $("input[name='inlineRadioOptions']:checked").val();
+		if (!radioValue){return}
 		surveyResults.push(radioValue);
 		survey();
-	} else {
-		var data = {
-			name: name,
-			photo: photo,
-			surveyResults: surveyResults
-		};
-		// Send the POST request.
-		$.ajax("/api/friends", {
-			type: "POST",
-			data: data
-		}).then(
-			function() {
-				console.log("shipped out");
-				// Reload the page to get the updated list
-				location.reload();
-			}
-		);
-	}
 });
 
 nameField();

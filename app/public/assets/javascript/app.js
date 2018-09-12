@@ -87,8 +87,10 @@ function sendData(){
 			type: "POST",
 			data: data
 		}).then(
-			function() {
-				return
+			function(data) {
+				$('#match-name').append(data.name);
+				$('.modal-body').append("<img src='" + data.photo + "'/>");
+				$('#myModal').modal();
 			});
 }
 

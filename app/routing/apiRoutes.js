@@ -18,7 +18,21 @@ module.exports = (function() {
 	var friendList = require("../data/friends");
 	apiRoutes.post("/api/friends", function(req,res){
 		var newFriend = req.body;
-		return friendList.push(newFriend);
+		var match;
+		var lowestSum = 50;
+		for (var i=0;i<friendList.length;i++){
+			var sum = 0;
+			for (var j=0;j<newFriend.surveyResults.length; j++){
+				sum += Math.abs(newFriend.surveyResults[j] - friendList[i].surveyResults[j]);
+			}
+			if (sum < lowestSum){
+				lowestSum = sum;
+				match = friendList[i];
+			}
+		}
+		console.log(match);
+		friendList.push(newFriend);
+		res.send(match);
 	});
 	
 	return apiRoutes;

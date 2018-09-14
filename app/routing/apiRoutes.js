@@ -1,6 +1,6 @@
 var path = require("path");
 var bodyParser = require("body-parser");
-
+var friendList = require("../data/friends");
 
 
 module.exports = (function() {
@@ -15,7 +15,9 @@ module.exports = (function() {
 	apiRoutes.get("/api/friends", function(req, res) {
 	  return res.json(friendList);
 	});
-	var friendList = require("../data/friends");
+	
+	
+	
 	apiRoutes.post("/api/friends", function(req,res){
 		var newFriend = req.body;
 		var match;

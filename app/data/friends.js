@@ -2,7 +2,7 @@ module.exports=[
 	{
 	  "name":"Ahmed",
 	  "photo":"https://imgur.com/xQqyumc",
-	  "scores":[
+	  "surveyResults":[
 		  5,
 		  1,
 		  4,
@@ -19,7 +19,7 @@ module.exports=[
 	{
 	  "name":"Carmina",
 	  "photo":"https://imgur.com/g0VlwTf",
-	  "scores":[
+	  "surveyResults":[
 			3,
 			2,
 			1,
@@ -36,7 +36,7 @@ module.exports=[
 	{
 	  "name":"Cloé",
 	  "photo":"https://imgur.com/6sxSD9Y",
-	  "scores":[
+	  "surveyResults":[
 			3,
 			4,
 			3,
@@ -53,7 +53,7 @@ module.exports=[
 	{
 	  "name":"Golshan",
 	  "photo":"https://imgur.com/WXgGLKb",
-	  "scores":[
+	  "surveyResults":[
 			4,
 			5,
 			1,
@@ -70,7 +70,7 @@ module.exports=[
 	{
 	  "name":"Zvonimira",
 	  "photo":"https://imgur.com/N2jY325",
-	  "scores":[
+	  "surveyResults":[
 			2,
 			4,
 			1,
@@ -87,7 +87,7 @@ module.exports=[
 	{
 	  "name":"Moriah",
 	  "photo":"https://imgur.com/VL5K7CR",
-	  "scores":[
+	  "surveyResults":[
 			5,
 			5,
 			5,
@@ -104,7 +104,7 @@ module.exports=[
 	{
 	  "name":"Gerlof",
 	  "photo":"https://imgur.com/57emc1A",
-	  "scores":[
+	  "surveyResults":[
 			4,
 			3,
 			1,
@@ -121,7 +121,7 @@ module.exports=[
 	{
 	  "name":"Jakob",
 	  "photo":"https://imgur.com/u78xLPC",
-	  "scores":[
+	  "surveyResults":[
 			5,
 			4,
 			1,
@@ -138,7 +138,7 @@ module.exports=[
 	{
 	  "name":"Aristaios ",
 	  "photo":"https://imgur.com/PboXLkz",
-	  "scores":[
+	  "surveyResults":[
 			4,
 			2,
 			3,

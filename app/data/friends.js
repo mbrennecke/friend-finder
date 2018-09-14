@@ -1,6 +1,154 @@
-// module.exports.arr = [];
-// module.exports.push2arr = function(val){
-	// module.exports.arr.push(val);
-// };
-
-module.exports=[];
+module.exports=[
+	{
+	  "name":"Ahmed",
+	  "photo":"https://imgur.com/xQqyumc",
+	  "scores":[
+		  5,
+		  1,
+		  4,
+		  4,
+		  5,
+		  1,
+		  2,
+		  5,
+		  4,
+		  1
+		]
+	},
+	
+	{
+	  "name":"Carmina",
+	  "photo":"https://imgur.com/g0VlwTf",
+	  "scores":[
+			3,
+			2,
+			1,
+			2,
+			1,
+			1,
+			4,
+			5,
+			3,
+			4
+		]
+	},
+	
+	{
+	  "name":"Cloé",
+	  "photo":"https://imgur.com/6sxSD9Y",
+	  "scores":[
+			3,
+			4,
+			3,
+			2,
+			4,
+			2,
+			4,
+			3,
+			2,
+			5
+		]
+	},
+	
+	{
+	  "name":"Golshan",
+	  "photo":"https://imgur.com/WXgGLKb",
+	  "scores":[
+			4,
+			5,
+			1,
+			2,
+			4,
+			2,
+			5,
+			4,
+			3,
+			5
+		]
+	},
+	
+	{
+	  "name":"Zvonimira",
+	  "photo":"https://imgur.com/N2jY325",
+	  "scores":[
+			2,
+			4,
+			1,
+			3,
+			3,
+			2,
+			5,
+			1,
+			4,
+			1
+		]
+	},
+	
+	{
+	  "name":"Moriah",
+	  "photo":"https://imgur.com/VL5K7CR",
+	  "scores":[
+			5,
+			5,
+			5,
+			3,
+			5,
+			5,
+			5,
+			1,
+			4,
+			2
+		]
+	},
+	
+	{
+	  "name":"Gerlof",
+	  "photo":"https://imgur.com/57emc1A",
+	  "scores":[
+			4,
+			3,
+			1,
+			3,
+			3,
+			1,
+			3,
+			3,
+			3,
+			5
+		]
+	},
+	
+	{
+	  "name":"Jakob",
+	  "photo":"https://imgur.com/u78xLPC",
+	  "scores":[
+			5,
+			4,
+			1,
+			3,
+			2,
+			3,
+			3,
+			4,
+			4,
+			5
+		]
+	},
+	
+	{
+	  "name":"Aristaios ",
+	  "photo":"https://imgur.com/PboXLkz",
+	  "scores":[
+			4,
+			2,
+			3,
+			4,
+			3,
+			2,
+			4,
+			3,
+			5,
+			2
+		]
+	}
+];

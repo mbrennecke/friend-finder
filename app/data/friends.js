@@ -35,7 +35,7 @@ module.exports=[
 	
 	{
 	  "name":"Cloé",
-	  "photo":"0.",
+	  "photo":"https://i.imgur.com/6sxSD9Y.jpg",
 	  "surveyResults":[
 			3,
 			4,

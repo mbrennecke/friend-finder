@@ -1,4 +1,4 @@
-var question = ["I have high self worth.", "I am spiritual.", "I need to see the world.", "I see value in play", "I could you be with someone who doesn’t have the same beliefs.", "I follow my heart.", "I think confessions make a relationship stronger.", "I wouldn't change anything about my body.", "Sexual chemistry is more important than spending time together.", "I am cool under pressure."];
+var question = ["I have high self worth.", "I am spiritual.", "I need to see the world.", "I see value in play", "I could be with someone who doesn’t have the same beliefs.", "I follow my heart.", "I think confessions make a relationship stronger.", "I wouldn't change anything about my body.", "Sexual chemistry is more important than spending time together.", "I am cool under pressure."];
 
 var count = 0;
 var name = '';
